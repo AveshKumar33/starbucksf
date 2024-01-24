@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200">
+  <!-- Red background -->
+  <rect x="0" y="0" width="300" height="100" fill="#ed3343" />
+
+  <!-- White background -->
+  <rect x="0" y="100" width="300" height="100" fill="#ffffff" />
+
+  <!-- Crescent and Stars -->
+  <path d="M60,50 C20,50 20,90 60,90 Z" fill="#ffffff" />
+  <path d="M68,50 C92,50 92,90 68,90 Z" fill="#ed3343" />
+
+  <!-- Five Stars -->
+  <polygon points="75,65 78,72 70,68 82,68 74,72" fill="#ffffff" />
+  <polygon points="75,65 78,72 70,68 82,68 74,72" transform="rotate(72 75 65)" fill="#ffffff" />
+  <polygon points="75,65 78,72 70,68 82,68 74,72" transform="rotate(144 75 65)" fill="#ffffff" />
+  <polygon points="75,65 78,72 70,68 82,68 74,72" transform="rotate(216 75 65)" fill="#ffffff" />
+  <polygon points="75,65 78,72 70,68 82,68 74,72" transform="rotate(288 75 65)" fill="#ffffff" />
+</svg>

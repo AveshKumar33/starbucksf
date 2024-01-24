@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 1350 900">
+  <!-- Saffron (top) -->
+  <rect x="0" y="0" width="1350" height="300" fill="#FF9933" />
+
+  <!-- White (middle) -->
+  <rect x="0" y="300" width="1350" height="300" fill="#FFFFFF" />
+
+  <!-- Green (bottom) -->
+  <rect x="0" y="600" width="1350" height="300" fill="#138808" />
+
+  <!-- Ashoka Chakra (Navy Blue) -->
+  <circle cx="675" cy="450" r="90" fill="#000080" />
+  <circle cx="675" cy="450" r="25" fill="#FFFFFF" />
+  <path d="M675 450 L675 250" stroke="#FFFFFF" stroke-width="15" />
+  <path d="M675 450 L734.8 491.7" stroke="#FFFFFF" stroke-width="15" />
+  <path d="M675 450 L625.2 491.7" stroke="#FFFFFF" stroke-width="15" />
+  <path d="M675 450 L675 550" stroke="#FFFFFF" stroke-width="15" />
+</svg>

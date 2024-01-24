@@ -1,0 +1,13 @@
+trigger:
+- none
+
+pool: dev-2
+
+variables:
+  imageName: synkaa-app-storybook
+
+steps:
+- script: |
+    docker build -f devops/Dockerfile-storybook -t $(imageName) .
+    docker stop $(imageName) &> /dev/null && docker rm $(imageName) &> /dev/null && echo "image stopped"
+    docker run -d  --name $(imageName) -p 8503:80 $(imageName)

@@ -1,0 +1,44 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "john_doe",
+      "password": "secretpassword123"
+    },
+    {
+      "id": 2,
+      "username": "jane_smith",
+      "password": "mypassword456"
+    },
+    {
+      "id": 3,
+      "username": "alex_johnson",
+      "password": "letmein789"
+    }
+  ],
+  "users2": [
+    {
+      "id": 1,
+      "username": "john_doe",
+      "password": "secretpassword123"
+    },
+    {
+      "id": 2,
+      "username": "jane_smith",
+      "password": "mypassword456"
+    },
+    {
+      "id": 3,
+      "username": "alex_johnson",
+      "password": "letmein789"
+    }
+  ],
+  "emp": [
+    {
+      "id": "id067df37415f37",
+      "firstname": "Kunal",
+      "lastname": "Purbia",
+      "email": "kunal@gmail.com"
+    }
+  ]
+}

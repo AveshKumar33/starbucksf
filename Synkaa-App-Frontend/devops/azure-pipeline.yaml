@@ -1,0 +1,31 @@
+trigger:
+- dev
+
+pool: dev-2
+
+variables:
+  - group: varsdev
+
+steps:
+- script: |
+    touch .env.local
+    sed -i '/AUTH0_SECRET/c\AUTH0_SECRET=$(AUTH0_SECRET)' .env.local
+    sed -i '/AUTH0_BASE_URL/c\AUTH0_BASE_URL=$(AUTH0_BASE_URL)' .env.local
+    sed -i '/AUTH0_ISSUER_BASE_URL/c\AUTH0_ISSUER_BASE_URL=$(AUTH0_ISSUER_BASE_URL)' .env.local
+    sed -i '/AUTH0_CLIENT_ID/c\AUTH0_CLIENT_ID=$(AUTH0_CLIENT_ID)' .env.local
+    sed -i '/NEXT_PUBLIC_BASE_URL/c\NEXT_PUBLIC_BASE_URL=$(NEXT_PUBLIC_BASE_URL)' .env.local
+    #sed -i '/NEXT_PUBLIC_API_REDIRECT_URL/c\NEXT_PUBLIC_API_REDIRECT_URL=$(NEXT_PUBLIC_API_REDIRECT_URL)' .env.local
+    sed -i '/AUTH0_CLIENT_SECRET/c\AUTH0_CLIENT_SECRET=$(AUTH0_CLIENT_SECRET)' .env.local
+    sed -i '/NEXT_PUBLIC_API_URL/c\NEXT_PUBLIC_API_URL=https://synkaa-api.symple.co.in/synkaa-app/api' .env.local  
+    sed -i '/NEXT_PUBLIC_SOCKET_URL/c\NEXT_PUBLIC_SOCKET_URL=https://synkaa-websocket.symple.co.in' .env.local
+
+    sed -i '/NEXT_PUBLIC_MANAGEMENT_API_URL/c\NEXT_PUBLIC_MANAGEMENT_API_URL=https://dev-ivf6ydjn5yamqequ.us.auth0.com' .env.local 
+    sed -i '/NEXT_PUBLIC_MANAGEMENT_API_CLIENT_ID/c\NEXT_PUBLIC_MANAGEMENT_API_CLIENT_ID=hFqWZpz2kxtpeLjF1urxzxA4G5sDCjpf' .env.local
+    sed -i '/NEXT_PUBLIC_MANAGEMENT_API_CLIENT_SECRET/c\NEXT_PUBLIC_MANAGEMENT_API_CLIENT_SECRET=89n2jeJS-X86oimE_P0SMDXkrsRXhuYHr8F60AQTVZjr63JcJQOLyA-38hcXAZ9z' .env.local
+    sed -i '/NEXT_PUBLIC_MANAGEMENT_API_AUDIENCE/c\NEXT_PUBLIC_MANAGEMENT_API_AUDIENCE=https://dev-ivf6ydjn5yamqequ.us.auth0.com/api/v2/' .env.local
+    sed -i '/NEXT_PUBLIC_MANAGEMENT_API_GRANT_TYPE/c\NEXT_PUBLIC_MANAGEMENT_API_GRANT_TYPE=client_credentials' .env.local
+    
+      
+    docker build -f devops/Dockerfile -t $(imageName) .
+    docker stop $(imageName) &> /dev/null && docker rm $(imageName) &> /dev/null && echo "image stopped"
+    docker run -d  --name $(imageName) -p 8502:3000 $(imageName)

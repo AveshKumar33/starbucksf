@@ -1,0 +1,15 @@
+// Tooltip design
+#sidebar-tooltip {
+  z-index: 99999;
+}
+
+.tooltip-design .common-tooltip {
+  z-index: 3;
+  background-color: #4e4e4e;
+  color: "#FFF";
+  border-radius: 4px;
+  padding: 12px;
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 400;
+}

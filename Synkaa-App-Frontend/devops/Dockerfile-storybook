@@ -1,0 +1,14 @@
+#Dockerfile
+FROM node:18-alpine as builder
+WORKDIR /app
+COPY . /app
+RUN npm i 
+
+RUN npm run build-storybook
+
+
+### STAGE 2: Setup ###
+FROM nginx:latest
+RUN rm -rf /etc/nginx/conf.d/*
+COPY /devops/nginx.conf /etc/nginx/conf.d/nginx.conf
+COPY --from=builder /app/storybook-static /var/www/html/
